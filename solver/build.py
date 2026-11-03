@@ -355,6 +355,27 @@ class Problem:
                     seen.add(key)
                     yield x, y, rot, rect, zone
 
+    def workable(self, rect, zone, rot, objs):
+        """Some spot 45-120 cm out in the front zone is clear of walls, things and door swings
+        (the scorer's work position needs a walkable cell there, 45 cm from door swings)."""
+        x, y, w, d = zone
+        blocks = [footprint(self.catalog[o.type], o.x, o.y, o.rot) for o in objs] + self.fixed + [rect]
+        if rot in (0, 180):
+            along = [x + w * f for f in (0.5, 0.25, 0.75, 0.0, 1.0)]
+            out = [y + d - v for v in (60, 75, 90)] if rot == 180 else [y + v for v in (60, 75, 90)]
+            pts = [(a, b) for b in out for a in along]
+        else:
+            along = [y + d * f for f in (0.5, 0.25, 0.75, 0.0, 1.0)]
+            out = [x + w - v for v in (60, 75, 90)] if rot == 90 else [x + v for v in (60, 75, 90)]
+            pts = [(a, b) for a in out for b in along]
+        for px, py in pts:
+            if not (45 <= px <= self.width - 45 and 45 <= py <= self.depth - 45):
+                continue
+            p = (px, py, 0, 0)
+            if all(gap(p, s) >= 45 for s in self.swings) and all(gap(p, b) >= 45 - EPS for b in blocks):
+                return True
+        return False
+
     def exact_clear(self, rect, zone, objs):
         for o in objs:
             r = footprint(self.catalog[o.type], o.x, o.y, o.rot)
@@ -383,9 +404,13 @@ class Problem:
         others = [u for o in objs for u in self.rects(o)]
         all_zones = [front_zone(footprint(self.catalog[o.type], o.x, o.y, o.rot), o.rot) for o in objs]
         cords = self.cords(objs)
-        attempts = 0
+        attempts, failed = 0, []
         for cost, x, y, rot, rect, zone in scored:
+            if any(r == rot and abs(fx - x) < 25 and abs(fy - y) < 25 for fx, fy, r in failed):
+                continue
             if not self.exact_clear(rect, zone, objs):
+                continue
+            if not self.workable(rect, zone, rot, objs):
                 continue
             if any(length_inside(a, b, zone, False) > EPS for a, b in cords):
                 continue
@@ -401,6 +426,7 @@ class Problem:
                 attempts += 1
                 if self.valid(trial):
                     return trial
+                failed.append((x, y, rot))
                 break
             if attempts >= tries:
                 return None

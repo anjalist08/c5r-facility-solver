@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 import sys
 import time
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from . import KIT, search
@@ -24,16 +24,18 @@ def inputs(plan, runs=None):
     return floor, load(CATALOG), load_runs(runs or runs_path(plan, floor))
 
 
-def solve(plan, runs=None, seconds=120, seed=0, quiet=False):
+def solve(plan, runs=None, seconds=120, seed=0, workers=1, start=None):
     floor, catalog, runs = inputs(plan, runs)
-    log = (lambda *a: None) if quiet else (lambda *a: print(f"[{floor['id']}]", *a, file=sys.stderr, flush=True))
-    layout, minutes = search.solve(floor, catalog, runs, seconds=seconds, seed=seed, log=log)
+    log = lambda *a: print(f"[{floor['id']}]", *a, file=sys.stderr, flush=True)  # noqa: E731
+    if start is not None:
+        start = load(start)
+    layout, minutes = search.solve(floor, catalog, runs, seconds, seed, workers, start, log)
     return floor["id"], layout, minutes
 
 
-def bench_one(plan, seconds, seed):
+def bench_one(plan, seconds, seed, workers):
     start = time.time()
-    name, layout, _ = solve(plan, seconds=seconds, seed=seed)
+    name, layout, _ = solve(plan, seconds=seconds, seed=seed, workers=workers)
     floor, catalog, runs = inputs(plan)
     report = score(floor, catalog, runs, layout) if layout else {"valid": False, "violations": ["no layout"]}
     OUT.mkdir(exist_ok=True)
@@ -45,8 +47,9 @@ def bench_one(plan, seconds, seed):
 
 def bench(args):
     plans = args.floorplans or sorted(str(p) for p in (KIT / "floorplans").glob("*.json"))
-    with ProcessPoolExecutor() as pool:
-        results = list(pool.map(bench_one, plans, [args.seconds] * len(plans), [args.seed] * len(plans)))
+    n = len(plans)
+    with ThreadPoolExecutor(n) as pool:
+        results = list(pool.map(bench_one, plans, [args.seconds] * n, [args.seed] * n, [args.workers] * n))
     for name, plan, report, took in results:
         if report["valid"]:
             new = keep(plan, json.loads((OUT / f"{name}.json").read_text()))

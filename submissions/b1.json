@@ -3,61 +3,88 @@
   {
    "id": "uline-60x30-1",
    "type": "uline-60x30",
-   "x": 192.4,
-   "y": 500,
-   "rot": 90,
-   "outlet": "h1"
+   "x": 460,
+   "y": 873.8,
+   "rot": 180,
+   "outlet": "f1"
   },
   {
-   "id": "xrd-1",
-   "type": "xrd",
+   "id": "zebra-printer-1",
+   "type": "zebra-printer",
    "bench": "uline-60x30-1"
   },
   {
-   "id": "pipettes-1",
-   "type": "pipettes",
+   "id": "opentrons-flex-1",
+   "type": "opentrons-flex",
+   "bench": "uline-60x30-1"
+  },
+  {
+   "id": "plateloc-1",
+   "type": "plateloc",
    "bench": "uline-60x30-1"
   },
   {
    "id": "uline-60x30-2",
    "type": "uline-60x30",
-   "x": 63.8,
-   "y": 780,
-   "rot": 270,
-   "outlet": "g1"
+   "x": 680,
+   "y": 753.8,
+   "rot": 180,
+   "outlet": "e2"
   },
   {
-   "id": "opentrons-flex-1",
-   "type": "opentrons-flex",
+   "id": "pipettes-1",
+   "type": "pipettes",
    "bench": "uline-60x30-2"
   },
   {
-   "id": "zebra-printer-1",
-   "type": "zebra-printer",
+   "id": "xrd-1",
+   "type": "xrd",
    "bench": "uline-60x30-2"
   },
   {
-   "id": "fume-extractor-1",
-   "type": "fume-extractor",
-   "x": 560,
-   "y": 140,
-   "rot": 0,
-   "outlet": "b1"
+   "id": "corrosive-cabinet-1",
+   "type": "corrosive-cabinet",
+   "x": 452.6,
+   "y": 549.2,
+   "rot": 270
   },
   {
    "id": "shelf-1",
    "type": "shelf",
-   "x": 20,
-   "y": 658.1,
+   "x": 620,
+   "y": 427.30000000000007,
+   "rot": 90
+  },
+  {
+   "id": "flammable-cabinet-1",
+   "type": "flammable-cabinet",
+   "x": 452.6,
+   "y": 420,
    "rot": 270
+  },
+  {
+   "id": "freezer-80-1",
+   "type": "freezer-80",
+   "x": 300,
+   "y": 658.4000000000001,
+   "rot": 270,
+   "outlet": "h1"
+  },
+  {
+   "id": "fume-extractor-1",
+   "type": "fume-extractor",
+   "x": 900,
+   "y": 267.6,
+   "rot": 90,
+   "outlet": "c1"
   },
   {
    "id": "uline-60x30-3",
    "type": "uline-60x30",
-   "x": 527.6,
-   "y": 340,
-   "rot": 180,
-   "outlet": "h1"
+   "x": 747.6,
+   "y": 140,
+   "rot": 0,
+   "outlet": "b1"
   },
   {
    "id": "balance-1",
@@ -65,55 +92,33 @@
    "bench": "uline-60x30-3"
   },
   {
-   "id": "freezer-80-1",
-   "type": "freezer-80",
-   "x": 260,
-   "y": 718.7,
+   "id": "fridge-1",
+   "type": "fridge",
+   "x": 903.8,
+   "y": 300.6,
    "rot": 90,
-   "outlet": "f2"
-  },
-  {
-   "id": "flammable-cabinet-1",
-   "type": "flammable-cabinet",
-   "x": 360,
-   "y": 700,
-   "rot": 0
-  },
-  {
-   "id": "corrosive-cabinet-1",
-   "type": "corrosive-cabinet",
-   "x": 400,
-   "y": 590.8,
-   "rot": 90
+   "outlet": "c1"
   },
   {
    "id": "uline-60x30-4",
    "type": "uline-60x30",
-   "x": 116.2,
-   "y": 179.4,
-   "rot": 0,
-   "outlet": "t1"
+   "x": 40,
+   "y": 420,
+   "rot": 270,
+   "outlet": "p1"
   },
   {
-   "id": "high-temp-furnace-1",
-   "type": "high-temp-furnace",
+   "id": "muffle-furnace-1",
+   "type": "muffle-furnace",
    "bench": "uline-60x30-4"
-  },
-  {
-   "id": "fridge-1",
-   "type": "fridge",
-   "x": 680,
-   "y": 179.4,
-   "rot": 90,
-   "outlet": "b1"
   },
   {
    "id": "uline-60x30-5",
    "type": "uline-60x30",
-   "x": 820,
-   "y": 80,
-   "rot": 0,
-   "outlet": "b2"
+   "x": 880,
+   "y": 387.0,
+   "rot": 90,
+   "outlet": "c2"
   },
   {
    "id": "nmr-1",
@@ -121,48 +126,22 @@
    "bench": "uline-60x30-5"
   },
   {
-   "id": "clariostar-1",
-   "type": "clariostar",
-   "bench": "uline-60x30-5"
-  },
-  {
-   "id": "fridge-2",
-   "type": "fridge",
-   "x": 880,
-   "y": 300,
-   "rot": 90,
-   "outlet": "c1"
-  },
-  {
    "id": "uline-60x30-6",
    "type": "uline-60x30",
-   "x": 500,
-   "y": 416.2,
-   "rot": 0,
-   "outlet": "h1"
+   "x": 116.2,
+   "y": 600,
+   "rot": 180,
+   "outlet": "g1"
   },
   {
-   "id": "balance-2",
-   "type": "balance",
+   "id": "pellet-press-1",
+   "type": "pellet-press",
    "bench": "uline-60x30-6"
   },
   {
    "id": "uline-60x30-7",
    "type": "uline-60x30",
-   "x": 903.8,
-   "y": 496.2,
-   "rot": 90,
-   "outlet": "c2"
-  },
-  {
-   "id": "plateloc-1",
-   "type": "plateloc",
-   "bench": "uline-60x30-7"
-  },
-  {
-   "id": "uline-60x30-8",
-   "type": "uline-60x30",
-   "x": 40,
+   "x": 20,
    "y": 267.6,
    "rot": 270,
    "outlet": "g2"
@@ -170,13 +149,31 @@
   {
    "id": "genevac-1",
    "type": "genevac",
+   "bench": "uline-60x30-7"
+  },
+  {
+   "id": "ball-mill-1",
+   "type": "ball-mill",
+   "bench": "uline-60x30-7"
+  },
+  {
+   "id": "uline-60x30-8",
+   "type": "uline-60x30",
+   "x": 880,
+   "y": 539.4,
+   "rot": 90,
+   "outlet": "c2"
+  },
+  {
+   "id": "clariostar-1",
+   "type": "clariostar",
    "bench": "uline-60x30-8"
   },
   {
    "id": "uline-60x30-9",
    "type": "uline-60x30",
-   "x": 407.6,
-   "y": 100,
+   "x": 420,
+   "y": 99.99999999999999,
    "rot": 0,
    "outlet": "a2"
   },
@@ -186,74 +183,35 @@
    "bench": "uline-60x30-9"
   },
   {
-   "id": "uline-60x30-10",
-   "type": "uline-60x30",
-   "x": 720,
-   "y": 840,
-   "rot": 180,
-   "outlet": "e2"
+   "id": "powder-balance-1",
+   "type": "powder-balance",
+   "bench": "uline-60x30-9"
   },
   {
-   "id": "ball-mill-1",
-   "type": "ball-mill",
+   "id": "uline-60x30-10",
+   "type": "uline-60x30",
+   "x": 580,
+   "y": 140,
+   "rot": 0,
+   "outlet": "b1"
+  },
+  {
+   "id": "lcms-2",
+   "type": "lcms",
    "bench": "uline-60x30-10"
   },
   {
    "id": "uline-60x30-11",
    "type": "uline-60x30",
-   "x": 947.6,
-   "y": 652.4,
+   "x": 140,
+   "y": 180,
    "rot": 0,
-   "outlet": "e1"
+   "outlet": "t1"
   },
   {
-   "id": "pellet-press-1",
-   "type": "pellet-press",
+   "id": "high-temp-furnace-1",
+   "type": "high-temp-furnace",
    "bench": "uline-60x30-11"
-  },
-  {
-   "id": "fume-extractor-2",
-   "type": "fume-extractor",
-   "x": 593,
-   "y": 116.79999999999998,
-   "rot": 0,
-   "outlet": "b1"
-  },
-  {
-   "id": "uline-60x30-12",
-   "type": "uline-60x30",
-   "x": 640,
-   "y": 797.6,
-   "rot": 90,
-   "outlet": "e2"
-  },
-  {
-   "id": "pellet-press-2",
-   "type": "pellet-press",
-   "bench": "uline-60x30-12"
-  },
-  {
-   "id": "ball-mill-2",
-   "type": "ball-mill",
-   "bench": "uline-60x30-12"
-  },
-  {
-   "id": "powder-balance-1",
-   "type": "powder-balance",
-   "bench": "uline-60x30-12"
-  },
-  {
-   "id": "uline-60x30-13",
-   "type": "uline-60x30",
-   "x": 40,
-   "y": 420,
-   "rot": 0,
-   "outlet": "p1"
-  },
-  {
-   "id": "muffle-furnace-1",
-   "type": "muffle-furnace",
-   "bench": "uline-60x30-13"
   }
  ]
 }
