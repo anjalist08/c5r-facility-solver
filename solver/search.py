@@ -55,12 +55,14 @@ def targets(P):
     return {t: max(1, min(P.inventory.get(t, 1), math.ceil(P.busy[t] / (0.7 * span)))) for t in P.types}
 
 
-def construct(P, counts, first=(), rng=None, jitter=0.0, log=None, rounds=8):
+def construct(P, counts, first=(), rng=None, jitter=0.0, log=None, rounds=8, deadline=math.inf):
     """Place counts[t] units of every needed type (the first one of each must
     fit). A type that cannot be placed moves to the front of the order and the
     build starts over (squeaky wheel)."""
     front = list(first)
     for _ in range(rounds):
+        if time.time() > deadline:
+            break
         objs, failed = [], None
         for t in front + [t for t in order(P, rng) if t not in front]:
             for n in range(counts.get(t, 1)):
@@ -274,13 +276,13 @@ def worker(floor, catalog, runs, seconds, seed, start=None, verbose=True):
             counts = {t: max(1, min(P.inventory.get(t, 1), n + rng.choice((-1, 0, 0, 1)))) for t, n in counts.items()}
         log("targets " + " ".join(f"{t}x{n}" for t, n in counts.items() if n > 1))
         jitter = 0.0 if seed == 0 else 0.5
-        objs, front = construct(P, counts, rng=rng, jitter=jitter, log=log)
+        objs, front = construct(P, counts, rng=rng, jitter=jitter, log=log, deadline=t0 + 0.4 * seconds)
         if objs is None:
             log("  falling back to one unit of each type")
             counts = {t: 1 for t in P.types}
-            objs, front = construct(P, counts, front, rng, jitter, log, rounds=12)
+            objs, front = construct(P, counts, front, rng, jitter, log, 12, t0 + 0.6 * seconds)
         if objs is None:
-            objs, _ = construct(P, counts, front, rng, 1.0, log, rounds=20)
+            objs, _ = construct(P, counts, front, rng, 1.0, log, 20, t0 + 0.8 * seconds)
         if objs is None:
             log("greedy failed")
             return None, math.inf
