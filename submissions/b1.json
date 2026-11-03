@@ -1,21 +1,43 @@
 {
  "items": [
   {
+   "id": "flammable-cabinet-1",
+   "type": "flammable-cabinet",
+   "x": 435,
+   "y": 430,
+   "rot": 270
+  },
+  {
+   "id": "fridge-1",
+   "type": "fridge",
+   "x": 865,
+   "y": 313.8,
+   "rot": 90,
+   "outlet": "c2"
+  },
+  {
+   "id": "shelf-1",
+   "type": "shelf",
+   "x": 684,
+   "y": 477.30000000000007,
+   "rot": 90
+  },
+  {
    "id": "uline-60x30-1",
    "type": "uline-60x30",
-   "x": 460,
-   "y": 873.8,
+   "x": 560,
+   "y": 800,
    "rot": 180,
    "outlet": "f1"
   },
   {
-   "id": "zebra-printer-1",
-   "type": "zebra-printer",
+   "id": "opentrons-flex-1",
+   "type": "opentrons-flex",
    "bench": "uline-60x30-1"
   },
   {
-   "id": "opentrons-flex-1",
-   "type": "opentrons-flex",
+   "id": "pellet-press-1",
+   "type": "pellet-press",
    "bench": "uline-60x30-1"
   },
   {
@@ -24,173 +46,112 @@
    "bench": "uline-60x30-1"
   },
   {
+   "id": "fume-extractor-1",
+   "type": "fume-extractor",
+   "x": 943.8,
+   "y": 280.8,
+   "rot": 90,
+   "outlet": "c1"
+  },
+  {
    "id": "uline-60x30-2",
    "type": "uline-60x30",
-   "x": 680,
-   "y": 753.8,
+   "x": 366.6,
+   "y": 860,
    "rot": 180,
-   "outlet": "e2"
+   "outlet": "f1"
   },
   {
-   "id": "pipettes-1",
-   "type": "pipettes",
-   "bench": "uline-60x30-2"
-  },
-  {
-   "id": "xrd-1",
-   "type": "xrd",
+   "id": "zebra-printer-1",
+   "type": "zebra-printer",
    "bench": "uline-60x30-2"
   },
   {
    "id": "corrosive-cabinet-1",
    "type": "corrosive-cabinet",
-   "x": 452.6,
-   "y": 549.2,
-   "rot": 270
-  },
-  {
-   "id": "shelf-1",
-   "type": "shelf",
-   "x": 620,
-   "y": 427.30000000000007,
-   "rot": 90
-  },
-  {
-   "id": "flammable-cabinet-1",
-   "type": "flammable-cabinet",
-   "x": 452.6,
-   "y": 420,
-   "rot": 270
-  },
-  {
-   "id": "freezer-80-1",
-   "type": "freezer-80",
-   "x": 300,
-   "y": 658.4000000000001,
-   "rot": 270,
-   "outlet": "h1"
-  },
-  {
-   "id": "fume-extractor-1",
-   "type": "fume-extractor",
-   "x": 900,
-   "y": 267.6,
-   "rot": 90,
-   "outlet": "c1"
+   "x": 380,
+   "y": 570,
+   "rot": 0
   },
   {
    "id": "uline-60x30-3",
    "type": "uline-60x30",
-   "x": 747.6,
-   "y": 140,
-   "rot": 0,
-   "outlet": "b1"
-  },
-  {
-   "id": "balance-1",
-   "type": "balance",
-   "bench": "uline-60x30-3"
-  },
-  {
-   "id": "fridge-1",
-   "type": "fridge",
-   "x": 903.8,
-   "y": 300.6,
-   "rot": 90,
-   "outlet": "c1"
-  },
-  {
-   "id": "uline-60x30-4",
-   "type": "uline-60x30",
-   "x": 40,
-   "y": 420,
-   "rot": 270,
-   "outlet": "p1"
-  },
-  {
-   "id": "muffle-furnace-1",
-   "type": "muffle-furnace",
-   "bench": "uline-60x30-4"
-  },
-  {
-   "id": "uline-60x30-5",
-   "type": "uline-60x30",
    "x": 880,
-   "y": 387.0,
-   "rot": 90,
-   "outlet": "c2"
-  },
-  {
-   "id": "nmr-1",
-   "type": "nmr",
-   "bench": "uline-60x30-5"
-  },
-  {
-   "id": "uline-60x30-6",
-   "type": "uline-60x30",
-   "x": 116.2,
-   "y": 600,
-   "rot": 180,
-   "outlet": "g1"
-  },
-  {
-   "id": "pellet-press-1",
-   "type": "pellet-press",
-   "bench": "uline-60x30-6"
-  },
-  {
-   "id": "uline-60x30-7",
-   "type": "uline-60x30",
-   "x": 20,
-   "y": 267.6,
-   "rot": 270,
-   "outlet": "g2"
-  },
-  {
-   "id": "genevac-1",
-   "type": "genevac",
-   "bench": "uline-60x30-7"
-  },
-  {
-   "id": "ball-mill-1",
-   "type": "ball-mill",
-   "bench": "uline-60x30-7"
-  },
-  {
-   "id": "uline-60x30-8",
-   "type": "uline-60x30",
-   "x": 880,
-   "y": 539.4,
+   "y": 422.6,
    "rot": 90,
    "outlet": "c2"
   },
   {
    "id": "clariostar-1",
    "type": "clariostar",
-   "bench": "uline-60x30-8"
+   "bench": "uline-60x30-3"
   },
   {
-   "id": "uline-60x30-9",
+   "id": "nmr-1",
+   "type": "nmr",
+   "bench": "uline-60x30-3"
+  },
+  {
+   "id": "ball-mill-1",
+   "type": "ball-mill",
+   "bench": "uline-60x30-3"
+  },
+  {
+   "id": "uline-60x30-4",
    "type": "uline-60x30",
-   "x": 420,
-   "y": 99.99999999999999,
+   "x": 460,
+   "y": 140,
    "rot": 0,
    "outlet": "a2"
   },
   {
    "id": "lcms-1",
    "type": "lcms",
-   "bench": "uline-60x30-9"
+   "bench": "uline-60x30-4"
   },
   {
-   "id": "powder-balance-1",
-   "type": "powder-balance",
-   "bench": "uline-60x30-9"
-  },
-  {
-   "id": "uline-60x30-10",
+   "id": "uline-60x30-5",
    "type": "uline-60x30",
-   "x": 580,
+   "x": 712.6,
+   "y": 760,
+   "rot": 180,
+   "outlet": "e2"
+  },
+  {
+   "id": "xrd-1",
+   "type": "xrd",
+   "bench": "uline-60x30-5"
+  },
+  {
+   "id": "uline-60x30-6",
+   "type": "uline-60x30",
+   "x": 93.79999999999998,
+   "y": 243.8,
+   "rot": 0,
+   "outlet": "t1"
+  },
+  {
+   "id": "high-temp-furnace-1",
+   "type": "high-temp-furnace",
+   "bench": "uline-60x30-6"
+  },
+  {
+   "id": "uline-60x30-7",
+   "type": "uline-60x30",
+   "x": 100,
+   "y": 63.79999999999998,
+   "rot": 270,
+   "outlet": "p1"
+  },
+  {
+   "id": "muffle-furnace-1",
+   "type": "muffle-furnace",
+   "bench": "uline-60x30-7"
+  },
+  {
+   "id": "uline-60x30-8",
+   "type": "uline-60x30",
+   "x": 612.4,
    "y": 140,
    "rot": 0,
    "outlet": "b1"
@@ -198,20 +159,51 @@
   {
    "id": "lcms-2",
    "type": "lcms",
+   "bench": "uline-60x30-8"
+  },
+  {
+   "id": "balance-1",
+   "type": "balance",
+   "bench": "uline-60x30-8"
+  },
+  {
+   "id": "uline-60x30-9",
+   "type": "uline-60x30",
+   "x": 0,
+   "y": 324.9000000000001,
+   "rot": 270,
+   "outlet": "g2"
+  },
+  {
+   "id": "genevac-1",
+   "type": "genevac",
+   "bench": "uline-60x30-9"
+  },
+  {
+   "id": "uline-60x30-10",
+   "type": "uline-60x30",
+   "x": 867.5999999999999,
+   "y": 580,
+   "rot": 90,
+   "outlet": "e1"
+  },
+  {
+   "id": "pipettes-1",
+   "type": "pipettes",
    "bench": "uline-60x30-10"
   },
   {
-   "id": "uline-60x30-11",
-   "type": "uline-60x30",
-   "x": 140,
-   "y": 180,
-   "rot": 0,
-   "outlet": "t1"
+   "id": "powder-balance-1",
+   "type": "powder-balance",
+   "bench": "uline-60x30-10"
   },
   {
-   "id": "high-temp-furnace-1",
-   "type": "high-temp-furnace",
-   "bench": "uline-60x30-11"
+   "id": "freezer-80-1",
+   "type": "freezer-80",
+   "x": 251,
+   "y": 640,
+   "rot": 270,
+   "outlet": "h1"
   }
  ]
 }

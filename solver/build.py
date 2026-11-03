@@ -199,13 +199,15 @@ class Problem:
                 pts[t].append(work_point(r, o.rot))
         return pts
 
+    pull = 0.05  # weight of the pull to the door, per visit
+
     def unit_cost(self, t, p, pts):
         cost = self.first[t] * math.dist(p, self.start)
         for q, w in self.pair[t].items():
             if pts.get(q):
                 cost += w * min(math.dist(p, r) for r in pts[q])
         # a little pull to the door for everything, so the lab stays compact
-        return cost + 0.05 * self.traffic[t] * math.dist(p, self.start)
+        return cost + self.pull * self.traffic[t] * math.dist(p, self.start)
 
     # ---- power ------------------------------------------------------------------
 
