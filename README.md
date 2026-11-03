@@ -31,8 +31,8 @@ is checked with the kit's own scorer; the kit baseline is the fallback.
 
 | Floor plan | Site name | This solver | Kit baseline |
 | --- | --- | --- | --- |
-| h0 | Main lab | 181.3 | 292.2 |
-| b1 | Process lab | 190.0 | 298.7 |
+| h0 | Main lab | 176.8 | 292.2 |
+| b1 | Process lab | 189.5 | 298.7 |
 | b2 | PCR and QC suite | 152.5 | 253.5 |
 
 ## How it works
