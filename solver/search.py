@@ -13,6 +13,7 @@ from facility import solve as kit_baseline
 from facility.geometry import footprint, front_zone
 from facility.safety import SERVICES, is_bench
 
+from . import fastsim
 from .build import Obj, Problem
 
 
@@ -82,8 +83,7 @@ def construct(P, counts, first=(), rng=None, jitter=0.0, log=None, rounds=8):
 
 
 def evaluate(P, objs):
-    report = kit_score(P.floor, P.catalog, P.runs, P.layout(objs))
-    return report["minutes"] if report["valid"] else None
+    return fastsim.score(P.floor, P.catalog, P.runs, P.layout(objs))
 
 
 def add_extras(P, objs, m, log, deadline):
