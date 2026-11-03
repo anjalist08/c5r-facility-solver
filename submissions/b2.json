@@ -1,37 +1,12 @@
 {
  "items": [
   {
-   "id": "hamilton-starlet-1",
-   "type": "hamilton-starlet",
-   "x": 244.20000000000002,
-   "y": 40,
-   "rot": 0,
-   "outlet": "a1"
-  },
-  {
-   "id": "shelf-1",
-   "type": "shelf",
-   "x": 509.0,
-   "y": 120,
-   "rot": 90
-  },
-  {
    "id": "uline-60x30-1",
    "type": "uline-60x30",
-   "x": 720,
-   "y": 277.6,
-   "rot": 90,
-   "outlet": "e2"
-  },
-  {
-   "id": "thermocycler-1",
-   "type": "thermocycler",
-   "bench": "uline-60x30-1"
-  },
-  {
-   "id": "plate-centrifuge-1",
-   "type": "plate-centrifuge",
-   "bench": "uline-60x30-1"
+   "x": 671.4,
+   "y": 79.99999999999999,
+   "rot": 0,
+   "outlet": "c1"
   },
   {
    "id": "clariostar-1",
@@ -39,22 +14,25 @@
    "bench": "uline-60x30-1"
   },
   {
+   "id": "quantstudio-1",
+   "type": "quantstudio",
+   "bench": "uline-60x30-1"
+  },
+  {
+   "id": "hamilton-starlet-1",
+   "type": "hamilton-starlet",
+   "x": 320,
+   "y": 329.4,
+   "rot": 180,
+   "outlet": "b2"
+  },
+  {
    "id": "uline-60x30-2",
    "type": "uline-60x30",
-   "x": 162.8,
-   "y": 272.4,
-   "rot": 270,
-   "outlet": "b1"
-  },
-  {
-   "id": "zebra-printer-1",
-   "type": "zebra-printer",
-   "bench": "uline-60x30-2"
-  },
-  {
-   "id": "plateloc-1",
-   "type": "plateloc",
-   "bench": "uline-60x30-2"
+   "x": 162.6,
+   "y": 340,
+   "rot": 180,
+   "outlet": "b2"
   },
   {
    "id": "opentrons-flex-1",
@@ -64,14 +42,19 @@
   {
    "id": "uline-60x30-3",
    "type": "uline-60x30",
-   "x": 356.6,
-   "y": 40,
-   "rot": 0,
-   "outlet": "a2"
+   "x": 725,
+   "y": 277.6,
+   "rot": 90,
+   "outlet": "e2"
   },
   {
-   "id": "opentrons-flex-2",
-   "type": "opentrons-flex",
+   "id": "thermocycler-1",
+   "type": "thermocycler",
+   "bench": "uline-60x30-3"
+  },
+  {
+   "id": "plate-centrifuge-1",
+   "type": "plate-centrifuge",
    "bench": "uline-60x30-3"
   },
   {
@@ -80,49 +63,61 @@
    "bench": "uline-60x30-3"
   },
   {
-   "id": "fridge-1",
-   "type": "fridge",
-   "x": 359.0,
-   "y": 333.8,
-   "rot": 180,
-   "outlet": "b2"
-  },
-  {
-   "id": "shelf-2",
-   "type": "shelf",
-   "x": 752.4,
-   "y": 150.49999999999997,
-   "rot": 90
+   "id": "thermocycler-2",
+   "type": "thermocycler",
+   "bench": "uline-60x30-3"
   },
   {
    "id": "freezer-20-1",
    "type": "freezer-20",
-   "x": 145.20000000000002,
-   "y": 140.6,
+   "x": 161.0,
+   "y": 133.6,
    "rot": 270,
-   "outlet": "a1"
+   "outlet": "b1"
   },
   {
-   "id": "uline-60x30-4",
-   "type": "uline-60x30",
-   "x": 600,
-   "y": 60,
+   "id": "shelf-1",
+   "type": "shelf",
+   "x": 260,
+   "y": 63.999999999999986,
+   "rot": 0
+  },
+  {
+   "id": "fridge-1",
+   "type": "fridge",
+   "x": 585.0,
+   "y": 123.8,
    "rot": 0,
    "outlet": "c1"
   },
   {
-   "id": "zebra-printer-2",
+   "id": "shelf-2",
+   "type": "shelf",
+   "x": 0,
+   "y": 1.8999999999999915,
+   "rot": 270
+  },
+  {
+   "id": "uline-60x30-4",
+   "type": "uline-60x30",
+   "x": 400,
+   "y": 123.8,
+   "rot": 0,
+   "outlet": "a2"
+  },
+  {
+   "id": "plateloc-1",
+   "type": "plateloc",
+   "bench": "uline-60x30-4"
+  },
+  {
+   "id": "zebra-printer-1",
    "type": "zebra-printer",
    "bench": "uline-60x30-4"
   },
   {
-   "id": "quantstudio-1",
-   "type": "quantstudio",
-   "bench": "uline-60x30-4"
-  },
-  {
-   "id": "thermocycler-2",
-   "type": "thermocycler",
+   "id": "opentrons-flex-2",
+   "type": "opentrons-flex",
    "bench": "uline-60x30-4"
   }
  ]

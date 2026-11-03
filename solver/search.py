@@ -111,6 +111,9 @@ def mutate(P, objs, rng):
     """A random neighbor of the layout (may be None or invalid)."""
     move = rng.random()
     n = len(objs)
+    if move < 0.3:
+        return nudge(P, objs, rng)
+    move = 0.1 + 0.9 * rng.random()
     if move < 0.35:
         # move one standing object (a floor unit or a whole bench) elsewhere
         k = rng.randrange(n)
@@ -190,6 +193,31 @@ def mutate(P, objs, rng):
     return new
 
 
+def nudge(P, objs, rng):
+    """Shift or turn one standing object a little, re-picking its outlet if needed."""
+    k = rng.randrange(len(objs))
+    new = [o.copy() for o in objs]
+    o = new[k]
+    if rng.random() < 0.2:
+        o.rot = rng.choice([r for r in (0, 90, 180, 270) if r != o.rot])
+    else:
+        step = rng.choice((5, 10, 20, 40, 80))
+        if rng.random() < 0.5:
+            o.x = max(0.0, o.x + rng.choice((-step, step)))
+        else:
+            o.y = max(0.0, o.y + rng.choice((-step, step)))
+    units = P.rects(o)
+    if any(P.catalog[t].get("watts") for t, _ in units):
+        rest = new[:k] + new[k + 1 :]
+        zones = [front_zone(footprint(P.catalog[q.type], q.x, q.y, q.rot), q.rot) for q in new]
+        power = P.power_state(rest)
+        choices = P.outlet_choices(units, power, zones, o.outlet) or P.outlet_choices(units, power, zones)
+        if not choices:
+            return None
+        o.outlet = choices[0]
+    return new
+
+
 def improve(P, objs, m, deadline, rng, log, temp=1.0):
     """Simulated annealing on the simulated makespan; returns the best layout seen."""
     best, best_m = objs, m
@@ -247,6 +275,10 @@ def worker(floor, catalog, runs, seconds, seed, start=None, verbose=True):
         log("targets " + " ".join(f"{t}x{n}" for t, n in counts.items() if n > 1))
         jitter = 0.0 if seed == 0 else 0.5
         objs, front = construct(P, counts, rng=rng, jitter=jitter, log=log)
+        if objs is None:
+            log("  falling back to one unit of each type")
+            counts = {t: 1 for t in P.types}
+            objs, front = construct(P, counts, front, rng, jitter, log, rounds=12)
         if objs is None:
             objs, _ = construct(P, counts, front, rng, 1.0, log, rounds=20)
         if objs is None:
